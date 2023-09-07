@@ -1,5 +1,6 @@
 img {
-    width: 100vh;
+    width: 40vw;
+    height: 100vh;
 }
 
 .valid {
@@ -8,4 +9,8 @@ img {
 
 .invalid {
     border: 2px solid red;
+}
+
+#container {
+    display: flex;
 }
