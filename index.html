@@ -18,31 +18,32 @@
 
     <p>You know you want to.</p>
 
-    <form action="get" method="#">
+    <form action="https://httpbin.org/post" method="post">
         <label for="first_name">FIRST NAME</label>
-        <input type="text" id="first" name="first_name" placeholder="John">
+        <input type="text" id="first_name" name="first_name" placeholder="John" class="regextest">
         
         <label for="last_name">LAST NAME</label>
-        <input type="text" id="last_name" name="last_name" placeholder="Doe">
+        <input type="text" id="last_name" name="last_name" placeholder="Doe" class="regextest">
         
         <label for="phone_number">PHONE NUMBER</label>
         <!--Look up how to enter country code-->
-        <input type="number" id="phone_number" name="phone_number" placeholder="07124354665">
+        <input type="number" id="phone_number" name="phone_number" placeholder="07124354665" class="regextest">
         
         <label for="email">EMAIL</label>
-        <input type="email" id="email" name="email" placeholder="john.doe@mydomain.com">      
+        <input type="email" id="email" name="email" placeholder="john.doe@mydomain.com" class="regextest">      
         <p>Email must be a valid add address, e.g. john.doe@mydomain.com</p>
         
         <label for="pwd">PASSWORD</label>
-        <input type="password" id="pwd" name="pwd" placeholder="Enter your password">
+        <input type="password" id="pwd" name="pwd" placeholder="Enter your password" class="regextest">
         <p>Password must be alphameric and between 8 - 20 characters.</p>
         
         <label for="pwd_confirm">CONFIRM PASSWORD</label>
         <input type="password" id="pwd_confirm" name="pwd_confirm" placeholder="Confirm your password">
         <p>Enter your password again.</p>
+        <p id="confim_msg"></p>
     </form>
 
-    <button id="button">Create account</button>
+    <button onclick="validatePwd()" id="button">Create account</button>
     <p>Already have an account?<span><a href="#">Log in.</a></span></p>
 </body>
 </html>

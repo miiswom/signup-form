@@ -2,7 +2,10 @@ img {
     width: 100vh;
 }
 
-form {
-    display: block;
-    margin: 0 auto;
+.valid {
+    border: 2px solid green;
+}
+
+.invalid {
+    border: 2px solid red;
 }
