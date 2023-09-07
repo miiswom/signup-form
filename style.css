@@ -1,3 +1,15 @@
+html {
+    box-sizing: border-box;
+}
+    
+*, ::before, ::after {
+    box-sizing: inherit;
+}
+
+* {
+    border: 2px red solid; 
+}
+
 img {
     width: 40vw;
     height: 100vh;
@@ -13,4 +25,37 @@ img {
 
 #container {
     display: flex;
+}
+
+section#right-side {
+    margin: 30px;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+}
+
+p {
+    font-size: 1.3em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 50vh;
+}
+label {
+    font-size: 1.3em;
+}
+
+input {
+    width: 100px;
+    height: 3vh;
+}
+
+.input-flex {
+    display: flex;
+    flex-direction: column;
 }
