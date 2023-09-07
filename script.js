@@ -12,14 +12,11 @@ const patterns = {
 // let pwd2 = document.getElementById('pwd_confirm').value; 
 // let msg = document.getElementById('confirm_msg');
 
+let pwd1test = document.getElementById('pwd');
+let pwd2test = document.getElementById('pwd_confirm');
+let msg = document.getElementById('confirm_msg');
 
-
-function validatePwd() {
-    let pwd1test = document.getElementById('pwd');
-    let pwd2test = document.getElementById('pwd_confirm');
-    let msg = document.getElementById('confirm_msg');
-    // msg = '';
-    // console.log(pwd1, pwd2);
+pwd2test.addEventListener('blur', () => {
     if(pwd1test.value != 0) {
         if(pwd1test.value == pwd2test.value) {
             console.log("It matches");
@@ -30,8 +27,11 @@ function validatePwd() {
             pwd2test.className = 'invalid';
             msg.textContent = 'invalid';
         }
-    }
-};
+    };
+});
+
+    // msg = '';
+    // console.log(pwd1, pwd2);
 
 function validate(field, regex) {
     if(regex.test(field.value)) {
