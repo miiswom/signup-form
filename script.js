@@ -42,7 +42,7 @@ function validate(field, regex) {
 };
 
 inputs.forEach((input) => {
-    input.addEventListener('keyup', (e) => {
+    input.addEventListener('blur', (e) => {
         validate(e.target, patterns[e.target.attributes.name.value])
     });
 });
