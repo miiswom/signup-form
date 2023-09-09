@@ -11,14 +11,19 @@ html {
     border: 2px red solid; 
 } */
 
+
 @font-face {
     font-family: Poppins;
     src: url(./assets/poppins.regular.ttf);
 }
 
+body {
+    background-color: rgba(239, 238, 238, 0.886);
+}
 img {
-    width: 40vw;
+    width: 25vw;
     height: 100vh;
+    /*use clamp() for scalling image when on a smaller device*/
 }
 
 .valid {
@@ -35,20 +40,21 @@ img {
 
 section#right-side {
     /* margin: 30px; */
-    width: 60vw;
+    padding: 150px;
+    width: 75vw;
+    height: 100vh;
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 2em;
     text-align: center;
-    margin-top: 0;
-    padding-top: 50px;
+    /* padding: 50px; */
     margin-left: 30px;
     margin-right: 30px;
 }
 
 p {
-    font-size: 1.3em;
+    font-size: 1em;
     margin-left: 30px;
     margin-right: 50px;
 }
@@ -59,17 +65,21 @@ p {
     flex-wrap: wrap;
     gap: 50px;
     margin-bottom: 30px;
-    padding: 10px;
+    margin-left: 0;
+    margin-right: 0;
+    padding: 30px;
     box-shadow: 0 4px 2px -2px gray;
+    background-color: white;
 }
 
 label, input {
-    font-size: 1.3em;
+    font-size: 0.9em;
 }
 
 input {
-    border-radius: 5%;
-    padding: 5px;
+    border-radius: 3%;
+    padding: 0.5em;
+    border: 1px grey solid;
 }
 
 .inputs-right,
@@ -87,7 +97,26 @@ input {
     gap: 3px;
 }
 
-.right-side-top,
-.form-bottom {
-    background-color: rgb(234, 232, 232);
+#button {
+    background-color: rgb(53, 113, 53);
+    font-size: 1em;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    width: 11vw;
+    height: 5vh;
+    border-radius: 3%;
+    box-shadow: 0 4px 2px -2px gray;
+    margin-left: 45px;
 }
+
+.old-users {
+    margin-left: 45px;
+
+}
+
+span :visited  {
+    text-decoration: none;
+    color: rgb(53, 113, 53);
+}
+
