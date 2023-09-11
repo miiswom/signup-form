@@ -8,6 +8,24 @@ const patterns = {
     email: /^([a-z\d\.-]+)@([a-z\d.-]+)\.([a-z]{2,8})(\.[a-z]{2,8})?$/,
 };
 
+let firstNameValid = document.getElementById('firstNameInvalid');
+let firstNameInvalid = document.getElementById('firstNameInvalid');
+
+let lastNameValid = document.getElementById('lastNameValid');
+let lastNameInvalid = document.getElementById('lastNameInvalid');
+
+let phoneValid = document.getElementById('phoneValid');
+let phoneInvalid = document.getElementById('phoneInvalid');
+
+let pwdValid = document.getElementById('pwdValid');
+let pwdInvalid = document.getElementById('pwdInvalid');
+
+let confirmValid = document.getElementById('confirmValid');
+let confirmInvalid = document.getElementById('confirmInvalid');
+
+let emailValid = document.getElementById('emailValid');
+let emailInvalid = document.getElementById('emailInvalid');
+
 // let pwd1test = document.getElementById('pwd').value;
 // let pwd2 = document.getElementById('pwd_confirm').value; 
 // let msg = document.getElementById('confirm_msg');
@@ -24,25 +42,34 @@ pwd2test.addEventListener('blur', () => {
             msg.textContent = 'valid';
         } else {
             console.log("It doesn't matches");
-            pwd2test.className = 'invalid';
-            msg.textContent = 'invalid';
+            pwd2test.className = 'invalid ';
+            msg.textContent = 'invalid ';
         }
     };
 });
 
     // msg = '';
     // console.log(pwd1, pwd2);
+const wrapper = document.getElementById('wrapper');
 
-function validate(field, regex) {
+function validate(field, regex, span) {
     if(regex.test(field.value)) {
-        field.className = 'valid';
+        field.style.border = '1px solid green';
+        
+        let small = document.createElement('small');
+        wrapper.appendChild(small);
+        small.classList.add('emojy');
     } else {
-        field.className = 'invalid';
+        field.style.border = '1px solid red';
     }
 };
 
 inputs.forEach((input) => {
     input.addEventListener('blur', (e) => {
-        validate(e.target, patterns[e.target.attributes.name.value])
+        validate(e.target, patterns[e.target.attributes.name.value]);
     });
 });
+
+
+
+

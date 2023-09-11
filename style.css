@@ -22,17 +22,30 @@ body {
 }
 img {
     width: 25vw;
-    height: 100vh;
+    height: 100%;
     /*use clamp() for scalling image when on a smaller device*/
 }
 
-.valid {
+/* .valid {
     border: 2px solid green;
-}
+} */
+
+/* .valid::after {
+    content: '✅';
+} */
 
 .invalid {
     border: 2px solid red;
 }
+
+/* .emojy::before {
+    content: '❌';
+} */
+
+/* .emojy::after {
+    content: '✅';
+} */
+
 
 #container {
     display: flex;
@@ -62,6 +75,7 @@ p {
 .form-top {
     display: flex;
     justify-content: start;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: 50px;
     margin-bottom: 30px;
@@ -72,6 +86,34 @@ p {
     background-color: white;
 }
 
+.inputs-div {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: start;
+    align-items: start;
+    gap: 5em;
+}
+
+small.emojy {
+    position: absolute;
+    left: 15em;
+    top: 2em;
+}
+
+small::after {
+    content: '✅';
+}
+
+small.required {
+    font-size: 1.5em;
+}
+
+.label-input-span {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
 label, input {
     font-size: 0.9em;
 }
@@ -80,21 +122,6 @@ input {
     border-radius: 3%;
     padding: 0.5em;
     border: 1px grey solid;
-}
-
-.inputs-right,
-.inputs-left {
-    display: flex;
-    flex-direction: column;
-    /* gap: 10px; */
-}
-
-.input-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 13px;
-    gap: 3px;
 }
 
 #button {
@@ -119,4 +146,3 @@ span :visited  {
     text-decoration: none;
     color: rgb(53, 113, 53);
 }
-
