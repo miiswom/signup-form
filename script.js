@@ -51,38 +51,47 @@ pwd2test.addEventListener('blur', () => {
     // msg = '';
     // console.log(pwd1, pwd2);
 
-const divs = document.querySelectorAll('div.wrapper');
 
 // const smalls = document.querySelectorAll('small.emojify')
 
+
+// function emojify(input) {
+// const divs = document.querySelectorAll('div.wrapper');
+
+// for (let i=0; i; i++) ((div) => {
+//     if (input.classList.contains('valid')) {
+//         let small = document.createElement('small')
+//         div.appendChild(small);
+//         small.textContent = '✅';
+//         return;
+//     } else if (input.classList.contains('invalid')) {
+//         let small = document.createElement('small');
+//         div.appendChild(small);
+//         small.textContent = '❌';
+//     } else {
+//         return;
+
+// }}
+// )};
+
 function validate(field, regex) {
-    if(regex.test(field.value)) {
-        field.classList.add('valid',);
-        field.classList.remove('invalid')
-        
-        // divs.forEach((div) => {
-        //     if(field.classList.contains('valid')) {
-        //         let small = document.createElement('small')
-        //         div.appendChild(small);
-        //         // small.classList.add('validEmojy');
-        //         return 
-        //     } else {
-        //         // small.classList.add('invalidEmojy');
-        //     }
-        // });
-    } else {
-        field.classList.add('invalid');
-        field.classList.remove('valid')
-    }
-};
+        if(regex.test(field.value)) {
+            field.classList.add('valid',);
+            field.classList.remove('invalid');
+        } else {
+            field.classList.add('invalid');
+            field.classList.remove('valid')
+        }  
+    
+    };
+
 
 // const container = document.getElementById('form-top')
 inputs.forEach((input) => {
     input.addEventListener('blur', (e) => {
         validate(e.target, patterns[e.target.attributes.name.value]);
+        // emojify(e.target)
     });
-});
-
-
+    });
 
 
