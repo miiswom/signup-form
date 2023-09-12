@@ -50,20 +50,33 @@ pwd2test.addEventListener('blur', () => {
 
     // msg = '';
     // console.log(pwd1, pwd2);
-const wrapper = document.getElementById('wrapper');
 
-function validate(field, regex, span) {
+const divs = document.querySelectorAll('div.wrapper');
+
+// const smalls = document.querySelectorAll('small.emojify')
+
+function validate(field, regex) {
     if(regex.test(field.value)) {
-        field.style.border = '1px solid green';
+        field.classList.add('valid',);
+        field.classList.remove('invalid')
         
-        let small = document.createElement('small');
-        wrapper.appendChild(small);
-        small.classList.add('emojy');
+        // divs.forEach((div) => {
+        //     if(field.classList.contains('valid')) {
+        //         let small = document.createElement('small')
+        //         div.appendChild(small);
+        //         // small.classList.add('validEmojy');
+        //         return 
+        //     } else {
+        //         // small.classList.add('invalidEmojy');
+        //     }
+        // });
     } else {
-        field.style.border = '1px solid red';
+        field.classList.add('invalid');
+        field.classList.remove('valid')
     }
 };
 
+// const container = document.getElementById('form-top')
 inputs.forEach((input) => {
     input.addEventListener('blur', (e) => {
         validate(e.target, patterns[e.target.attributes.name.value]);

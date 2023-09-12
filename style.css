@@ -26,9 +26,9 @@ img {
     /*use clamp() for scalling image when on a smaller device*/
 }
 
-/* .valid {
+.valid {
     border: 2px solid green;
-} */
+}
 
 /* .valid::after {
     content: '✅';
@@ -42,10 +42,6 @@ img {
     content: '❌';
 } */
 
-/* .emojy::after {
-    content: '✅';
-} */
-
 
 #container {
     display: flex;
@@ -53,9 +49,14 @@ img {
 
 section#right-side {
     /* margin: 30px; */
-    padding: 150px;
+    padding: 300px;
+    padding-top: 0;
     width: 75vw;
     height: 100vh;
+}
+
+section#left-side {
+    position: relative;
 }
 
 h1 {
@@ -66,13 +67,34 @@ h1 {
     margin-right: 30px;
 }
 
+#parler {
+    position: absolute;
+    font-size: 5em;
+    left: 0.5em;
+    top: -0.9em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#parler-div {
+    position: absolute;
+    /* left: 3em; */
+    top: 23em;
+    background-color: #214bb7;
+    height: 7em;
+    width: 25vw;
+    opacity: 0.5;
+}
+
 p {
     font-size: 1em;
     margin-left: 30px;
     margin-right: 50px;
 }
 
-.form-top {
+#form-top {
     display: flex;
     justify-content: start;
     flex-direction: column;
@@ -94,14 +116,30 @@ p {
     gap: 5em;
 }
 
-small.emojy {
-    position: absolute;
-    left: 15em;
-    top: 2em;
+input:focus {
+    border: 2px solid rgb(0, 166, 255);
+    box-shadow: 1px 5px 5px #bac0b5;
+}
+/* .emojy {
+
+} */
+
+.wrapper {
+    position: relative;
 }
 
-small::after {
+.validEmojy::after {
     content: '✅';
+}
+
+.invalidEmojy::after{
+    content: '❌';
+}
+
+.emojify {
+    position: absolute;
+    left: 15em;
+    top: -2em;
 }
 
 small.required {
@@ -121,11 +159,11 @@ label, input {
 input {
     border-radius: 3%;
     padding: 0.5em;
-    border: 1px grey solid;
+    border: 1px #E5E7EB solid;
 }
 
 #button {
-    background-color: rgb(53, 113, 53);
+    background-color: #596D48;
     font-size: 1em;
     font-weight: bold;
     color: white;
